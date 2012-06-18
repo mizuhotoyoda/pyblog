@@ -1,0 +1,53 @@
+<div class="nospanx">
+<h1>ようこそ、PyBlogへ</h1>
+<div><p>このサイトはPython2.7 + MongoDBで稼動しています。</p></div>
+    <div id="post-view">
+        <div id="navi">$navi</div>
+        <div class="content">
+            <div id="title" class="panel"><a href="/?id=${id}">${title}</a></div>
+            <div id="content" class="panel">$content</div>
+            <div id="info">
+                Post on $date by $name<br />
+                <form method="post" action="/">
+                    <input type="hidden" name="a" value="delete" />
+                    <input type="hidden" name="p" value="3" />
+                    <input type="hidden" name="id" value="${id}" />
+                    <div>削除キー&nbsp;<input type="text" name="delkey" size="15" /></div>
+                    <button class="nobutton" type="submit">このエントリを削除する</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="post-form">
+        <div class="emphasis">投稿フォーム</div>
+        <div class="panel">
+        <span class="req">*</span>が付いている項目は入力必須となります。
+        <form method="post" action="/">
+            <input type="hidden" name="a" value="post" />
+            <input type="hidden" name="p" value="3" />
+            <table class="post-input">
+                <tr>
+                    <th>投稿者名<span class="req">*</span></th>
+                    <td><input type="text" name="name" /></td>
+                </tr>
+                <tr>
+                    <th>タイトル<span class="req">*</span></th>
+                    <td><input type="text" name="title" size="40" /></td>
+                </tr>
+                <tr>
+                    <th>投稿内容<span class="req">*</span></th>
+                    <td><textarea name="content" rows="10" cols="40"></textarea></td>
+                </tr>
+                <tr>
+                    <th>削除キー</th>
+                    <td><input type="password" name="delkey" /><br />削除する際に必要となります。</td>
+                </tr>
+                <tr>
+                    <td colspan="2"><div style="text-align:center;"><button type="submit">投稿する</button></div></td>
+                </tr>
+            </table>
+        </form>
+        </div>
+    </div>
+    <div>&nbsp;</div>
+</div>
